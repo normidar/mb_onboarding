@@ -1,224 +1,13 @@
-function show_temperature (数値: number) {
-    if (数値 < 10 && 数値 >= 0) {
-        basic.showNumber(input.temperature())
-    } else if (数値 == 11) {
-        basic.showLeds(`
-            . # . # .
-            . # . # .
-            . # . # .
-            . # . # .
-            . # . # .
-            `)
-    } else if (数値 == 12) {
-        basic.showLeds(`
-            # . # # #
-            # . . . #
-            # . # # #
-            # . # . .
-            # . # # #
-            `)
-    } else if (数値 == 13) {
-        basic.showLeds(`
-            # . # # #
-            # . . . #
-            # . # # #
-            # . . . #
-            # . # # #
-            `)
-    } else if (数値 == 14) {
-        basic.showLeds(`
-            # . # . #
-            # . # . #
-            # . # # #
-            # . . . #
-            # . . . #
-            `)
-    } else if (数値 == 15) {
-        basic.showLeds(`
-            # . # # #
-            # . # . .
-            # . # # #
-            # . . . #
-            # . # # #
-            `)
-    } else if (数値 == 16) {
-        basic.showLeds(`
-            # . # # #
-            # . # . .
-            # . # # #
-            # . # . #
-            # . # # #
-            `)
-    } else if (数値 == 17) {
-        basic.showLeds(`
-            # . # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # . . . #
-            `)
-    } else if (数値 == 18) {
-        basic.showLeds(`
-            # . # # #
-            # . # . #
-            # . # # #
-            # . # . #
-            # . # # #
-            `)
-    } else if (数値 == 19) {
-        basic.showLeds(`
-            # . # # #
-            # . # . #
-            # . # # #
-            # . . . #
-            # . # # #
-            `)
-    } else if (数値 == 20) {
-        basic.showLeds(`
-            # # . . .
-            . # # # #
-            # # # . #
-            # . # # #
-            # # . . .
-            `)
-    } else if (数値 == 21) {
-        basic.showLeds(`
-            # # # . #
-            . . # . #
-            # # # . #
-            # . . . #
-            # # # . #
-            `)
-    } else if (数値 == 22) {
-        basic.showLeds(`
-            # # . # #
-            . # . . #
-            # # . # #
-            # . . # .
-            # # . # #
-            `)
-    } else if (数値 == 23) {
-        basic.showLeds(`
-            # # . # #
-            . # . . #
-            # # . # #
-            # . . . #
-            # # . # #
-            `)
-    } else if (数値 == 24) {
-        basic.showLeds(`
-            # # # . #
-            . # # . #
-            # # # # #
-            # . . . #
-            # # . . #
-            `)
-    } else if (数値 == 25) {
-        basic.showLeds(`
-            # # . # #
-            . # . # .
-            # # . # #
-            # . . . #
-            # # . # #
-            `)
-    } else if (数値 == 26) {
-        basic.showLeds(`
-            # # . # #
-            . # . # .
-            # # . # #
-            # . . # #
-            # # . . .
-            `)
-    } else if (数値 == 27) {
-        basic.showLeds(`
-            # # . # #
-            . # . . #
-            # # . . #
-            # . . . #
-            # # . . #
-            `)
-    } else if (数値 == 28) {
-        basic.showLeds(`
-            # # # # #
-            . # # . #
-            # # # # #
-            # . # . #
-            # # # # #
-            `)
-    } else if (数値 == 29) {
-        basic.showLeds(`
-            # # . . .
-            . # . # #
-            # # . # #
-            # . . . #
-            # # . # #
-            `)
-    } else if (数値 == 30) {
-        basic.showLeds(`
-            # # . . .
-            . # # # #
-            # # # . #
-            . # # # #
-            # # . . .
-            `)
-    } else if (数値 == 31) {
-        basic.showLeds(`
-            # # # . #
-            . . # . #
-            # # # . #
-            . . # . #
-            # # # . #
-            `)
-    } else if (数値 == 32) {
-        basic.showLeds(`
-            # # . # #
-            . # . . #
-            # # . # #
-            . # . # .
-            # # . # #
-            `)
-    } else if (数値 == 33) {
-        basic.showLeds(`
-            # # . # #
-            . # . . #
-            # # . # #
-            . # . . #
-            # # . # #
-            `)
-    } else if (数値 == 34) {
-        basic.showLeds(`
-            # # . . .
-            . # # . #
-            # # # # #
-            . # . . #
-            # # . . #
-            `)
-    } else if (数値 == 35) {
-        basic.showLeds(`
-            # # . # #
-            . # . # .
-            # # . # #
-            . # . . #
-            # # . # #
-            `)
-    } else if (数値 == 36) {
-        basic.showLeds(`
-            # # . . .
-            . # . # #
-            # # . # .
-            . # . # #
-            # # . # #
-            `)
-    } else if (数値 == 37) {
-        basic.showLeds(`
-            # # . # #
-            . # . . #
-            # # . . #
-            . # . . #
-            # # . . #
-            `)
-    } else {
-        basic.showNumber(数値)
+function countdown () {
+    count_down_number = input.runningTimeMicros()
+    for (let index = 0; index < 200; index++) {
+        now_count_down = Math.floor((input.runningTimeMicros() - count_down_number) / 1000000)
+        if (now_count_down > 10) {
+            mode = "select"
+            break;
+        }
+        show_number(10 - now_count_down)
+        basic.pause(100)
     }
 }
 input.onButtonPressed(Button.A, function () {
@@ -227,8 +16,6 @@ input.onButtonPressed(Button.A, function () {
         if (now_select < 0) {
             now_select = 24
         }
-        basic.clearScreen()
-        show_point(now_select)
     }
 })
 function show_point (数値: number) {
@@ -241,6 +28,12 @@ input.onGesture(Gesture.Shake, function () {
         mode = "temperature"
     } else if (now_select == 2) {
         mode = "volume"
+    } else if (now_select == 3) {
+        mode = "saikoro"
+        basic.showNumber(randint(1, 6))
+    } else if (now_select == 4) {
+        mode = "countdown"
+        countdown()
     } else {
         basic.showLeds(`
             . . . . .
@@ -257,8 +50,9 @@ input.onGesture(Gesture.Shake, function () {
 function show_volume () {
     basic.pause(100)
     basic.clearScreen()
-    for (let カウンター = 0; カウンター <= Math.floor(input.lightLevel() / 4); カウンター++) {
+    while (カウンター <= Math.floor(input.lightLevel() / 4)) {
         show_point(カウンター)
+        カウンター += 1
     }
 }
 input.onButtonPressed(Button.AB, function () {
@@ -267,8 +61,8 @@ input.onButtonPressed(Button.AB, function () {
         if (now_select < 0) {
             now_select = now_select + 25
         }
-        basic.clearScreen()
-        show_point(now_select)
+    } else {
+        mode = "select"
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -277,12 +71,241 @@ input.onButtonPressed(Button.B, function () {
         if (now_select >= 25) {
             now_select = 0
         }
-        basic.clearScreen()
-        show_point(now_select)
     }
 })
 function get_y (数値2: number) {
     return Math.floor(数値2 / 5)
+}
+function show_number (数値3: number) {
+    if (数値3 < 10 && 数値3 >= 0) {
+        basic.showNumber(数値3)
+    } else if (数値3 == 10) {
+        basic.showLeds(`
+            # . # # #
+            # . # . #
+            # . # . #
+            # . # . #
+            # . # # #
+            `)
+    } else if (数値3 == 11) {
+        basic.showLeds(`
+            . # . # .
+            . # . # .
+            . # . # .
+            . # . # .
+            . # . # .
+            `)
+    } else if (数値3 == 12) {
+        basic.showLeds(`
+            # . # # #
+            # . . . #
+            # . # # #
+            # . # . .
+            # . # # #
+            `)
+    } else if (数値3 == 13) {
+        basic.showLeds(`
+            # . # # #
+            # . . . #
+            # . # # #
+            # . . . #
+            # . # # #
+            `)
+    } else if (数値3 == 14) {
+        basic.showLeds(`
+            # . # . #
+            # . # . #
+            # . # # #
+            # . . . #
+            # . . . #
+            `)
+    } else if (数値3 == 15) {
+        basic.showLeds(`
+            # . # # #
+            # . # . .
+            # . # # #
+            # . . . #
+            # . # # #
+            `)
+    } else if (数値3 == 16) {
+        basic.showLeds(`
+            # . # # #
+            # . # . .
+            # . # # #
+            # . # . #
+            # . # # #
+            `)
+    } else if (数値3 == 17) {
+        basic.showLeds(`
+            # . # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # . . . #
+            `)
+    } else if (数値3 == 18) {
+        basic.showLeds(`
+            # . # # #
+            # . # . #
+            # . # # #
+            # . # . #
+            # . # # #
+            `)
+    } else if (数値3 == 19) {
+        basic.showLeds(`
+            # . # # #
+            # . # . #
+            # . # # #
+            # . . . #
+            # . # # #
+            `)
+    } else if (数値3 == 20) {
+        basic.showLeds(`
+            # # . . .
+            . # # # #
+            # # # . #
+            # . # # #
+            # # . . .
+            `)
+    } else if (数値3 == 21) {
+        basic.showLeds(`
+            # # # . #
+            . . # . #
+            # # # . #
+            # . . . #
+            # # # . #
+            `)
+    } else if (数値3 == 22) {
+        basic.showLeds(`
+            # # . # #
+            . # . . #
+            # # . # #
+            # . . # .
+            # # . # #
+            `)
+    } else if (数値3 == 23) {
+        basic.showLeds(`
+            # # . # #
+            . # . . #
+            # # . # #
+            # . . . #
+            # # . # #
+            `)
+    } else if (数値3 == 24) {
+        basic.showLeds(`
+            # # # . #
+            . # # . #
+            # # # # #
+            # . . . #
+            # # . . #
+            `)
+    } else if (数値3 == 25) {
+        basic.showLeds(`
+            # # . # #
+            . # . # .
+            # # . # #
+            # . . . #
+            # # . # #
+            `)
+    } else if (数値3 == 26) {
+        basic.showLeds(`
+            # # . # #
+            . # . # .
+            # # . # #
+            # . . # #
+            # # . . .
+            `)
+    } else if (数値3 == 27) {
+        basic.showLeds(`
+            # # . # #
+            . # . . #
+            # # . . #
+            # . . . #
+            # # . . #
+            `)
+    } else if (数値3 == 28) {
+        basic.showLeds(`
+            # # # # #
+            . # # . #
+            # # # # #
+            # . # . #
+            # # # # #
+            `)
+    } else if (数値3 == 29) {
+        basic.showLeds(`
+            # # . . .
+            . # . # #
+            # # . # #
+            # . . . #
+            # # . # #
+            `)
+    } else if (数値3 == 30) {
+        basic.showLeds(`
+            # # . . .
+            . # # # #
+            # # # . #
+            . # # # #
+            # # . . .
+            `)
+    } else if (数値3 == 31) {
+        basic.showLeds(`
+            # # # . #
+            . . # . #
+            # # # . #
+            . . # . #
+            # # # . #
+            `)
+    } else if (数値3 == 32) {
+        basic.showLeds(`
+            # # . # #
+            . # . . #
+            # # . # #
+            . # . # .
+            # # . # #
+            `)
+    } else if (数値3 == 33) {
+        basic.showLeds(`
+            # # . # #
+            . # . . #
+            # # . # #
+            . # . . #
+            # # . # #
+            `)
+    } else if (数値3 == 34) {
+        basic.showLeds(`
+            # # . . .
+            . # # . #
+            # # # # #
+            . # . . #
+            # # . . #
+            `)
+    } else if (数値3 == 35) {
+        basic.showLeds(`
+            # # . # #
+            . # . # .
+            # # . # #
+            . # . . #
+            # # . # #
+            `)
+    } else if (数値3 == 36) {
+        basic.showLeds(`
+            # # . . .
+            . # . # #
+            # # . # .
+            . # . # #
+            # # . # #
+            `)
+    } else if (数値3 == 37) {
+        basic.showLeds(`
+            # # . # #
+            . # . . #
+            # # . . #
+            . # . . #
+            # # . . #
+            `)
+    } else {
+        basic.showNumber(数値3)
+    }
 }
 function show_sinan () {
     if (input.compassHeading() <= 22.5 || input.compassHeading() > 337.5) {
@@ -303,22 +326,27 @@ function show_sinan () {
         basic.showArrow(ArrowNames.SouthWest)
     }
 }
-function get_x (数値3: number) {
-    return 数値3 % 5
+function get_x (数値32: number) {
+    return 数値32 % 5
 }
+let カウンター = 0
+let now_count_down = 0
+let count_down_number = 0
 let mode = ""
 let now_select = 0
-music.playMelody("C D E F G A B C5 ", 120)
-now_select = 0
+now_select = randint(0, 24)
 mode = "select"
-led.plot(0, 0)
+show_point(now_select)
 basic.forever(function () {
     if (mode == "sinan") {
         show_sinan()
     } else if (mode == "temperature") {
-        show_temperature(input.temperature())
+        show_number(input.temperature())
     } else if (mode == "volume") {
         show_volume()
+    } else if (mode == "select") {
+        basic.clearScreen()
+        show_point(now_select)
     } else {
     	
     }
