@@ -249,9 +249,13 @@ input.onGesture(Gesture.Shake, function () {
             . . . . .
             . . . . .
             `)
+        basic.pause(2000)
+        basic.clearScreen()
+        show_point(now_select)
     }
 })
 function show_volume () {
+    basic.pause(100)
     basic.clearScreen()
     for (let カウンター = 0; カウンター <= Math.floor(input.lightLevel() / 4); カウンター++) {
         show_point(カウンター)
@@ -304,6 +308,7 @@ function get_x (数値3: number) {
 }
 let mode = ""
 let now_select = 0
+music.playMelody("C D E F G A B C5 ", 120)
 now_select = 0
 mode = "select"
 led.plot(0, 0)
