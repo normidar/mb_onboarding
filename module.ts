@@ -1,5 +1,6 @@
 
 class Module{
+    constructor(){}
     onStart(): void{}
     onEnd(): void {
         this.endListener()

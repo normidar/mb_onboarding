@@ -1,6 +1,10 @@
 
 class Thermometer extends Module{
     isStateMode: boolean = true
+    constructor(){
+        super()
+        // this.isStateMode = true
+    }
     onLoop(){
         if(this.isStateMode) {
             show_number(input.temperature())

@@ -15,7 +15,8 @@
         "modules/dice.ts",
         "methods.ts",
         "modules/compass.ts",
-        "modules/thermometer.ts"
+        "modules/thermometer.ts",
+        "modules/pin_checker.ts"
     ],
     "testFiles": [
         "test.ts"
