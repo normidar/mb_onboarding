@@ -1,11 +1,18 @@
+
+// onStart
 let mode = "select"
-let now_select = 0
-let modules: Module[] = []
+let now_select = randint(0, 24)
+let modules: Module[] = [
+    new Dice(),
+]
+show_point(now_select)
 modules.forEach(function (v,i){
     v.addEndListener(function (){
         mode = "select"
     })
 })
+
+
 input.onButtonPressed(Button.A, function () {
     if (mode == "select") {
         now_select += 0 - 1
