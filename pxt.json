@@ -12,7 +12,8 @@
         "README.md",
         "main.py",
         "module.ts",
-        "modules/dice.ts"
+        "modules/dice.ts",
+        "methods.ts"
     ],
     "testFiles": [
         "test.ts"
