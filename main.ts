@@ -1,4 +1,3 @@
-
 function countdown () {
     count_down_number = input.runningTimeMicros()
     for (let index = 0; index < 200; index++) {
@@ -12,12 +11,13 @@ function countdown () {
     }
 }
 input.onButtonPressed(Button.A, function () {
-    if (mode == "select") {
-        now_select += -1
-        if (now_select < 0) {
-            now_select = 24
-        }
-    }
+    // if (mode == "select") {
+    //     now_select += -1
+    //     if (now_select < 0) {
+    //         now_select = 24
+    //     }
+    // }
+    new Dice().onAClicked()
 })
 function show_point (数値: number) {
     led.plot(get_x(数値), get_y(数値))
@@ -333,22 +333,22 @@ function get_x (数値32: number) {
 let カウンター = 0
 let now_count_down = 0
 let count_down_number = 0
-let mode = ""
+let mode = "select"
 let now_select = 0
 now_select = randint(0, 24)
-mode = "select"
 show_point(now_select)
 basic.forever(function () {
-    if (mode == "sinan") {
-        show_sinan()
-    } else if (mode == "temperature") {
-        show_number(input.temperature())
-    } else if (mode == "volume") {
-        show_volume()
-    } else if (mode == "select") {
-        basic.clearScreen()
-        show_point(now_select)
-    } else {
+    new Dice().onAClicked()
+    // if (mode == "sinan") {
+    //     show_sinan()
+    // } else if (mode == "temperature") {
+    //     show_number(input.temperature())
+    // } else if (mode == "volume") {
+    //     show_volume()
+    // } else if (mode == "select") {
+    //     basic.clearScreen()
+    //     show_point(now_select)
+    // } else {
     	
-    }
+    // }
 })
