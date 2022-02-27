@@ -1,0 +1,4 @@
+
+interface Module{
+    onAClicked(): null
+}
