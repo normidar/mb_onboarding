@@ -9,6 +9,8 @@ show_point(now_select)
 modules.forEach(function (v,i){
     v.addEndListener(function (){
         mode = "select"
+        basic.clearScreen()
+        show_point(now_select)
     })
 })
 

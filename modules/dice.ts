@@ -1,5 +1,17 @@
 class Dice extends Module {
     onAClicked() {
-        basic.showNumber(3)
+        this.showRandom()
+    }
+    onBClicked() {
+        this.showRandom()
+    }
+    onShake() {
+        this.showRandom()
+    }
+    onStart(){
+        this.showRandom()
+    }
+    showRandom(){
+        basic.showNumber(randint(1,6))
     }
 }
