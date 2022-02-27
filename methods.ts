@@ -1,26 +1,26 @@
-function countdown() {
-    count_down_number = input.runningTimeMicros()
-    for (let index = 0; index < 200; index++) {
-        now_count_down = Math.floor((input.runningTimeMicros() - count_down_number) / 1000000)
-        if (now_count_down > 10) {
-            mode = "select"
-            break;
-        }
-        show_number(10 - now_count_down)
-        basic.pause(100)
-    }
-}
+// function countdown() {
+//     count_down_number = input.runningTimeMicros()
+//     for (let index = 0; index < 200; index++) {
+//         now_count_down = Math.floor((input.runningTimeMicros() - count_down_number) / 1000000)
+//         if (now_count_down > 10) {
+//             mode = "select"
+//             break;
+//         }
+//         show_number(10 - now_count_down)
+//         basic.pause(100)
+//     }
+// }
 function show_point(数値: number) {
     led.plot(get_x(数値), get_y(数値))
 }
-function show_volume() {
-    basic.pause(100)
-    basic.clearScreen()
-    while (カウンター <= Math.floor(input.lightLevel() / 4)) {
-        show_point(カウンター)
-        カウンター += 1
-    }
-}
+// function show_volume() {
+//     basic.pause(100)
+//     basic.clearScreen()
+//     while (カウンター <= Math.floor(input.lightLevel() / 4)) {
+//         show_point(カウンター)
+//         カウンター += 1
+//     }
+// }
 function get_y(数値2: number) {
     return Math.floor(数値2 / 5)
 }
