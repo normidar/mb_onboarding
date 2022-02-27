@@ -13,7 +13,9 @@
         "main.py",
         "module.ts",
         "modules/dice.ts",
-        "methods.ts"
+        "methods.ts",
+        "modules/compass.ts",
+        "modules/thermometer.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -4,11 +4,16 @@ class Module{
     onEnd(): void {
         this.endListener()
     }
-    onAClicked(): void{}
-    onBClicked(): void{}
+    onAClicked(): void{
+        this.onAOrBClicked()
+    }
+    onBClicked(): void{
+        this.onAOrBClicked()
+    }
     onABClicked(): void{
         this.onEnd()
     }
+    onAOrBClicked(): void{}
     onLoop(): void {}
     onShake(): void {}
 
