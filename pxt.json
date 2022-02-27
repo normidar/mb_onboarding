@@ -4,7 +4,9 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "radio-blockchain": "github:microsoft/pxt-radio-blockchain#v0.1.4",
+        "radio-broadcast": "*"
     },
     "files": [
         "main.blocks",
@@ -16,7 +18,8 @@
         "methods.ts",
         "modules/compass.ts",
         "modules/thermometer.ts",
-        "modules/pin_checker.ts"
+        "modules/pin_checker.ts",
+        "modules/voltmeter.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -5,7 +5,9 @@ let now_select = randint(0, 24)
 let modules: Module[] = [
     new Dice(),
     new Compass(),
-    new Thermometer()
+    new Thermometer(),
+    new PinChecker(),
+    new Voltmeter(),
 ]
 show_point(now_select)
 modules.forEach(function (v,i){
