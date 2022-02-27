@@ -1,6 +1,11 @@
-let mode = ""
+let mode = "select"
 let now_select = 0
 let modules: Module[] = []
+modules.forEach(function (v,i){
+    v.addEndListener(function (){
+        mode = "select"
+    })
+})
 input.onButtonPressed(Button.A, function () {
     if (mode == "select") {
         now_select += 0 - 1
